@@ -46,7 +46,7 @@ public:
                   portNumBits tunnelOverHTTPPortNum, int verbosityLevel, int socketNumToServer);
   virtual ~ProxyRTSPClient();
 
-  void continueAfterDESCRIBE(char const* sdpDescription);
+    virtual void continueAfterDESCRIBE(char const* sdpDescription);
   void continueAfterLivenessCommand(int resultCode, Boolean serverSupportsGetParameter);
   void continueAfterSETUP(int resultCode);
   void continueAfterPLAY(int resultCode);

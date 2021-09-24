@@ -58,3 +58,20 @@ target_link_libraries(
         ssl
         crypto
 )
+
+add_executable(dynamicProxyServer
+        dynamicProxyServer/dynamicProxyServer.cpp
+        dynamicProxyServer/DynamicRTSPProxyServer.cpp
+        dynamicProxyServer/AsyncProxyServerMediaSession.cpp
+        liveMedia/ProxyServerMediaSession.cpp # 为了调试才加的这句
+        )
+
+target_link_libraries(
+        dynamicProxyServer
+        ${LIVE_MEDIA}
+        ${GROUP_SOCK_LIB}
+        ${BAC_USG_ENV}
+        ${USG_ENV}
+        ssl
+        crypto
+)
